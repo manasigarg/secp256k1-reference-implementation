@@ -26,4 +26,18 @@ SECP256K1 is an elliptic curve commonly used in ECDSA-based cryptographic system
 
 ## Example Usage
 
-- **eth.py**: This file contains code to connect to Ethereum blockchain via Infura, generate keys and accounts for Ethereum, create a sample transaction, sign and verify the transaction, and finally send the transaction to blockchain.
+```
+# Initialization
+eth = Ethereum()
+eth.init_infura()
+eth.gen_acc()
+
+# Sign check
+# msg = "Hello Blockchain!"
+# eth.sign(msg)
+# eth.verify(msg,eth.r,eth.s)
+
+# Sign and send transaction
+eth.sign_tx(to='0x0aCA1E3f5e997295B3EF340f528E2B6a5970B6A9', value=10)
+eth.send_tx()
+```
